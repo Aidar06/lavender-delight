@@ -64,8 +64,8 @@ img{max-width:100%}
 .calendar span{position:relative;display:grid;place-items:center;height:42px;z-index:1}
 .calendar .weekday{height:26px;font:9px/1 var(--sans);letter-spacing:1px;text-transform:uppercase;color:#948a91}
 .calendar .empty{visibility:hidden}
-.calendar .wedding-day{color:#fff;font-size:22px}
-.calendar .wedding-day::before{content:"♥";position:absolute;z-index:-1;font-size:50px;line-height:1;color:#927ea0;top:-5px;filter:drop-shadow(0 4px 5px #67576b22)}
+.calendar .wedding-day{isolation:isolate;color:#fff;font-size:21px;text-shadow:0 1px 2px #64566f4d}
+.calendar .wedding-day::before{content:"";position:absolute;left:50%;top:50%;z-index:-1;width:61px;height:56px;background:url("assets/calendar-heart.svg") center/contain no-repeat;filter:drop-shadow(0 4px 6px #67576b22);animation:heart-beat 1.75s ease-in-out infinite;transform:translate(-50%,-39%) scale(1)}
 .date-time{margin:30px 0 0;font-size:22px}.date-time b{font-weight:400;color:#806e8c}
 .text-link{margin-top:20px;border:0;border-bottom:1px solid #aa8d64;background:transparent;padding:5px 1px;cursor:pointer;font:10px/1.4 var(--sans);letter-spacing:1.2px;text-transform:uppercase}
 .countdown{grid-column:1/-1;display:flex;justify-content:center;gap:clamp(28px,7vw,95px);margin-top:20px;text-align:center}
@@ -122,6 +122,7 @@ footer h2{margin:0;font:400 clamp(52px,8vw,88px)/1 var(--script)}footer h2 i{fon
 .guest-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding-top:28px}.guest-card{position:relative;min-height:210px;padding:34px;text-align:center;background:#fbf5ece8;border:1px solid #b69b7455;box-shadow:0 12px 35px #66513c12}.guest-card h3{margin:0;font:italic 34px/1 var(--serif);color:#74637f}.guest-card p{margin:18px 0 0;font-size:18px}.guest-meta{display:inline-block;margin-top:12px;padding:6px 12px;border:1px solid #a991815e;font:9px/1 var(--sans);letter-spacing:.7px;text-transform:uppercase}.guest-meta.yes{background:#8c7898;color:white}.guest-empty{grid-column:1/-1;text-align:center;padding:65px 20px}
 
 @keyframes float{50%{transform:translateY(8px)}}
+@keyframes heart-beat{0%,100%{transform:translate(-50%,-39%) scale(1)}12%{transform:translate(-50%,-39%) scale(1.09)}24%{transform:translate(-50%,-39%) scale(1)}38%{transform:translate(-50%,-39%) scale(1.06)}54%{transform:translate(-50%,-39%) scale(1)}}
 @media(max-width:900px){
   .hero__card{width:min(88vw,590px)}.botanical--hero-left{width:650px;left:-310px}.botanical--hero-right{width:520px;right:-265px}
   .letter__card{padding:110px 80px}.botanical--letter-left{left:-310px}.botanical--letter-right{right:-285px}
@@ -134,10 +135,10 @@ footer h2{margin:0;font:400 clamp(52px,8vw,88px)/1 var(--script)}footer h2 i{fon
   .botanical--hero-left{width:470px;left:-188px;top:-68px}.botanical--hero-right{width:390px;right:-148px;bottom:-82px}.scroll-cue{bottom:12px}
   .floral-seam img{width:190vw;transform:translate(-50%,-49%)}
   .letter{min-height:980px;padding:160px 14px 95px}.letter__card{width:94vw;min-height:745px;padding:98px 47px 90px}.letter__copy{font-size:21px}.letter__date{font-size:29px}.letter__note{font-size:18px}.letter__signature{font-size:36px}.script-heading{font-size:clamp(49px,15vw,69px)}.section-label{font-size:8px;letter-spacing:2.2px}.botanical--letter-left{width:380px;left:-260px;bottom:-25px}.botanical--letter-right{width:330px;right:-238px;top:70px}
-  .date-section{padding:95px 14px 110px}.date-section__intro>p:last-child{font-size:20px}.calendar-wrap{width:94vw;min-height:560px;padding:64px 40px 54px}.calendar-wrap h3{font-size:38px}.calendar{gap:3px;font-size:18px}.calendar span{height:36px}.calendar .wedding-day::before{font-size:43px}.countdown{gap:25px}.countdown span{min-width:68px}.countdown b{font-size:34px}.countdown i{font-size:7px;letter-spacing:1px}
+  .date-section{padding:95px 14px 110px}.date-section__intro>p:last-child{font-size:20px}.calendar-wrap{width:94vw;min-height:560px;padding:70px 44px 58px}.calendar-wrap h3{font-size:38px}.calendar{gap:3px;font-size:18px}.calendar span{height:36px}.calendar .wedding-day::before{width:58px;height:54px}.countdown{gap:25px}.countdown span{min-width:68px}.countdown b{font-size:34px}.countdown i{font-size:7px;letter-spacing:1px}
   .program{padding:105px 17px 140px}.section-head{margin-bottom:55px}.program__list::before{left:83px}.program-item{grid-template-columns:58px 52px 1fr;gap:12px;min-height:145px}.program-item time{font-size:21px}.program-item__icon{width:52px;height:52px;padding:11px}.program-item h3{font-size:26px}.program-item p{font-size:16px;line-height:1.35}.botanical--program{width:380px;right:-225px;bottom:-90px}
   .venue{padding:100px 10px 135px}.venue__art{width:96vw;aspect-ratio:1.2;padding:23px}.venue__image{object-position:center}.venue__copy{width:88vw;margin-top:-24px;padding:45px 23px 40px}.venue__copy h3{font-size:clamp(49px,15vw,66px)}.map-buttons{flex-direction:column}.map-buttons .paper-button{width:100%}.venue__sprig{width:360px;left:-235px;bottom:-115px}
   .rsvp{padding:120px 10px 105px;min-height:1000px}.rsvp__card{width:96vw;padding:91px 43px 82px}.rsvp__seal{width:78px;height:78px}.choice{min-width:100%}.botanical--rsvp-left{width:390px;left:-285px;top:40px}.botanical--rsvp-right{width:360px;right:-255px;bottom:-40px}
   footer{padding:82px 16px 90px}footer>p{font-size:29px}.guest-list{grid-template-columns:1fr}.guest-sheet__head .script-heading{font-size:47px}.guest-sheet__panel{padding-left:18px;padding-right:18px}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.scroll-cue b{animation:none}.botanical{will-change:auto}.guest-sheet__panel,.guest-sheet__backdrop{transition:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.scroll-cue b,.calendar .wedding-day::before{animation:none}.botanical{will-change:auto}.guest-sheet__panel,.guest-sheet__backdrop{transition:none}}
