@@ -10,18 +10,22 @@ let language=localStorage.getItem('lavender-estate-language')==='ky'?'ky':'ru';
 let fallback,config,inviteId;
 
 const envelopeIntro=$('#envelopeIntro'),envelopeVideo=$('#envelopeVideo'),openEnvelope=$('#openEnvelope');
-let envelopeOpening=false,envelopeFallback;
+let envelopeOpening=false,envelopeFadeStarted=false,envelopeFallback;
 function finishEnvelope(){
   if(envelopeIntro.classList.contains('is-exiting'))return;
   clearTimeout(envelopeFallback);envelopeIntro.classList.add('is-exiting');document.body.classList.remove('intro-locked');
   setTimeout(()=>{envelopeIntro.hidden=true;envelopeVideo.pause();envelopeVideo.removeAttribute('src');envelopeVideo.querySelector('source')?.remove()},800);
 }
 async function startEnvelope(){
-  if(envelopeOpening)return;envelopeOpening=true;openEnvelope.disabled=true;envelopeIntro.classList.add('is-playing');envelopeVideo.currentTime=0;
+  if(envelopeOpening)return;envelopeOpening=true;envelopeFadeStarted=false;openEnvelope.disabled=true;envelopeIntro.classList.add('is-playing');envelopeVideo.currentTime=0;
   envelopeFallback=setTimeout(finishEnvelope,7000);
   try{await envelopeVideo.play()}catch{finishEnvelope()}
 }
-openEnvelope.addEventListener('click',startEnvelope);envelopeVideo.addEventListener('ended',finishEnvelope);envelopeVideo.addEventListener('error',()=>envelopeOpening&&finishEnvelope());
+function fadeEnvelopeEarly(){
+  if(envelopeFadeStarted||!Number.isFinite(envelopeVideo.duration))return;
+  if(envelopeVideo.currentTime>=Math.max(0,envelopeVideo.duration-1.5)){envelopeFadeStarted=true;envelopeIntro.classList.add('is-fading')}
+}
+openEnvelope.addEventListener('click',startEnvelope);envelopeVideo.addEventListener('timeupdate',fadeEnvelopeEarly);envelopeVideo.addEventListener('ended',finishEnvelope);envelopeVideo.addEventListener('error',()=>envelopeOpening&&finishEnvelope());
 if('scrollRestoration'in history)history.scrollRestoration='manual';scrollTo(0,0);
 
 async function load(){

@@ -11,9 +11,9 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;bo
 button,input,textarea,select{font:inherit;color:inherit}
 button,a{-webkit-tap-highlight-color:transparent}
 img{max-width:100%}
-.envelope-intro{position:fixed;inset:0;z-index:120;display:grid;place-items:center;overflow:hidden;background:#eee5da;opacity:1;visibility:visible;transition:opacity .75s ease,visibility 0s linear .75s}
+.envelope-intro{position:fixed;inset:0;z-index:120;display:grid;place-items:center;overflow:hidden;background:#eee5da;opacity:1;visibility:visible;transition:opacity 1.5s ease-out,visibility 0s linear 1.5s}
 .envelope-intro::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 52%,#fff9f1 0 18%,#eee4d8 72%);opacity:.78}
-.envelope-intro.is-exiting{opacity:0;visibility:hidden}
+.envelope-intro.is-fading{opacity:0}.envelope-intro.is-exiting{opacity:0;visibility:hidden}
 .envelope-intro__poster,.envelope-intro__video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:#eee5da}
 .envelope-intro__poster{z-index:1;transition:opacity .18s ease}
 .envelope-intro__video{z-index:2;opacity:0}
