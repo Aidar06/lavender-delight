@@ -10,12 +10,22 @@
   <meta property="og:title" content="Свадебное приглашение">
   <meta property="og:description" content="Будем счастливы разделить этот день вместе">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/envelope-closed.webp" as="image">
   <link rel="preload" href="assets/paper-texture.webp" as="image">
   <link rel="preload" href="assets/botanical-left.webp" as="image">
   <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="intro-locked">
+  <div class="envelope-intro" id="envelopeIntro" aria-label="Открыть свадебное приглашение">
+    <img class="envelope-intro__poster" src="assets/envelope-closed.webp" alt="Свадебный конверт с лавандовой печатью">
+    <video class="envelope-intro__video" id="envelopeVideo" muted playsinline preload="auto" poster="assets/envelope-closed.webp" aria-hidden="true">
+      <source src="assets/envelope-opening.mp4" type="video/mp4">
+    </video>
+    <button class="envelope-intro__open" id="openEnvelope" type="button" aria-label="Открыть приглашение">
+      <span>Открыть приглашение</span><b>↑</b>
+    </button>
+  </div>
   <div class="locale-switch" role="group" aria-label="Язык">
     <button type="button" data-lang="ru" class="active">RU</button><i></i><button type="button" data-lang="ky">KG</button>
   </div>

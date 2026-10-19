@@ -9,6 +9,21 @@ const dictionary={
 let language=localStorage.getItem('lavender-estate-language')==='ky'?'ky':'ru';
 let fallback,config,inviteId;
 
+const envelopeIntro=$('#envelopeIntro'),envelopeVideo=$('#envelopeVideo'),openEnvelope=$('#openEnvelope');
+let envelopeOpening=false,envelopeFallback;
+function finishEnvelope(){
+  if(envelopeIntro.classList.contains('is-exiting'))return;
+  clearTimeout(envelopeFallback);envelopeIntro.classList.add('is-exiting');document.body.classList.remove('intro-locked');
+  setTimeout(()=>{envelopeIntro.hidden=true;envelopeVideo.pause();envelopeVideo.removeAttribute('src');envelopeVideo.querySelector('source')?.remove()},800);
+}
+async function startEnvelope(){
+  if(envelopeOpening)return;envelopeOpening=true;openEnvelope.disabled=true;envelopeIntro.classList.add('is-playing');envelopeVideo.currentTime=0;
+  envelopeFallback=setTimeout(finishEnvelope,7000);
+  try{await envelopeVideo.play()}catch{finishEnvelope()}
+}
+openEnvelope.addEventListener('click',startEnvelope);envelopeVideo.addEventListener('ended',finishEnvelope);envelopeVideo.addEventListener('error',()=>envelopeOpening&&finishEnvelope());
+if('scrollRestoration'in history)history.scrollRestoration='manual';scrollTo(0,0);
+
 async function load(){
   fallback=await fetch('/content.json',{cache:'no-cache'}).then(response=>{if(!response.ok)throw new Error('fallback');return response.json()});
   inviteId=invitationIdFromPath(location.pathname,fallback.backend.defaultId)||String(fallback.backend.defaultId);
