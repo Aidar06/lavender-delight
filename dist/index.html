@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f2e9dd">
+  <title>Свадебное приглашение</title>
+  <meta name="description" content="Персональное приглашение на свадьбу">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Свадебное приглашение">
+  <meta property="og:description" content="Будем счастливы разделить этот день вместе">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/paper-texture.webp" as="image">
+  <link rel="preload" href="assets/botanical-left.webp" as="image">
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="locale-switch" role="group" aria-label="Язык">
+    <button type="button" data-lang="ru" class="active">RU</button><i></i><button type="button" data-lang="ky">KG</button>
+  </div>
+
+  <main>
+    <section class="hero" id="welcome">
+      <img class="botanical botanical--hero-left" src="assets/botanical-left.webp" alt="" fetchpriority="high">
+      <img class="botanical botanical--hero-right" src="assets/botanical-right.webp" alt="" fetchpriority="high">
+      <div class="hero__wash" aria-hidden="true"></div>
+      <div class="hero__card reveal is-visible">
+        <img class="graphic-frame graphic-frame--tall" src="assets/frame-tall.svg" alt="">
+        <div class="monogram" aria-hidden="true"><span data-initial="first">Б</span><b>&amp;</b><span data-initial="second">А</span></div>
+        <p class="eyebrow" data-i18n="invitation">Приглашение на свадьбу</p>
+        <h1 class="hero__names"><span data-name="first">Бекзат</span><i>&amp;</i><span data-name="second">Алина</span></h1>
+        <img class="small-ornament" src="assets/ornament-divider.svg" alt="">
+        <p class="hero__date" data-date="long">12 июня 2027</p>
+      </div>
+      <img class="hero__seal" src="assets/wax-seal.webp" alt="" width="180" height="180">
+      <a class="scroll-cue" href="#letter"><span data-i18n="scroll">Листайте ниже</span><b>↓</b></a>
+    </section>
+
+    <div class="floral-seam" aria-hidden="true"><img src="assets/floral-divider.webp" alt=""></div>
+
+    <section class="letter paper-section" id="letter">
+      <img class="botanical botanical--letter-left" src="assets/botanical-left.webp" alt="" loading="lazy">
+      <article class="letter__card reveal">
+        <img class="graphic-frame graphic-frame--tall" src="assets/frame-tall.svg" alt="">
+        <p class="section-label" data-i18n="dearSmall">Для самых близких</p>
+        <h2 class="script-heading" data-i18n="dear">Дорогие друзья и родные!</h2>
+        <p class="letter__copy" data-content="welcome">Есть моменты, которые хочется разделить с самыми близкими. Будем счастливы видеть вас рядом в день рождения нашей семьи.</p>
+        <img class="section-ornament" src="assets/ornament-divider.svg" alt="">
+        <p class="letter__date" data-date="long">12 июня 2027</p>
+        <p class="letter__note" data-i18n="support">Нам будет невероятно приятно разделить с вами этот особенный день и почувствовать ваше внимание, любовь и поддержку.</p>
+        <p class="letter__signature" data-i18n="signature">С любовью и нежностью</p>
+      </article>
+      <img class="botanical botanical--letter-right" src="assets/botanical-right.webp" alt="" loading="lazy">
+    </section>
+
+    <section class="date-section paper-section" id="date">
+      <div class="date-section__intro reveal">
+        <p class="section-label" data-i18n="saveSmall">Сохраните дату</p>
+        <h2 class="script-heading" data-i18n="when">Когда?</h2>
+        <p data-i18n="dateLead">Мы будем счастливы разделить с вами радость нашего особенного дня.</p>
+      </div>
+      <div class="calendar-wrap reveal">
+        <img class="graphic-frame graphic-frame--wide" src="assets/frame-wide.svg" alt="">
+        <h3 data-date="monthYear">Июнь 2027</h3>
+        <div class="calendar" id="calendar"></div>
+        <p class="date-time"><span data-date="weekday">Суббота</span> · <b data-date="time">16:30</b></p>
+        <button class="text-link" id="calendarButton" type="button" data-i18n="addCalendar">Добавить в календарь</button>
+      </div>
+      <div class="countdown reveal" aria-label="До свадьбы">
+        <span><b data-count="days">000</b><i data-i18n="days">дней</i></span>
+        <span><b data-count="hours">00</b><i data-i18n="hours">часов</i></span>
+        <span><b data-count="minutes">00</b><i data-i18n="minutes">минут</i></span>
+      </div>
+    </section>
+
+    <section class="program paper-section" id="program">
+      <img class="botanical botanical--program" src="assets/botanical-right.webp" alt="" loading="lazy">
+      <header class="section-head reveal"><p class="section-label" data-i18n="programSmall">В этот день</p><h2 class="script-heading" data-i18n="program">Программа дня</h2><img src="assets/ornament-divider.svg" alt=""></header>
+      <div class="program__list" id="schedule"></div>
+    </section>
+
+    <section class="venue paper-section" id="venue">
+      <header class="section-head reveal"><p class="section-label" data-i18n="whereSmall">Место встречи</p><h2 class="script-heading" data-i18n="where">Адрес проведения</h2></header>
+      <div class="venue__art reveal">
+        <img class="venue__image" src="assets/venue-watercolor.webp" alt="Акварельная усадьба с садом" loading="lazy">
+        <img class="graphic-frame graphic-frame--wide" src="assets/frame-wide.svg" alt="">
+      </div>
+      <div class="venue__copy reveal">
+        <p class="venue__type" data-venue="type">Банкетный зал</p>
+        <h3 data-venue="name">Изумруд</h3>
+        <p data-venue="address">г. Бишкек, ул. Чуй, 123</p>
+        <div class="map-buttons"><a id="googleMapLink" class="paper-button" href="#" target="_blank" rel="noopener">Google Maps</a><a id="twoGisLink" class="paper-button paper-button--ghost" href="#" target="_blank" rel="noopener">2ГИС</a></div>
+      </div>
+      <img class="venue__sprig" src="assets/botanical-left.webp" alt="" loading="lazy">
+    </section>
+
+    <section class="rsvp paper-section" id="rsvp">
+      <img class="botanical botanical--rsvp-left" src="assets/botanical-left.webp" alt="" loading="lazy">
+      <div class="rsvp__card reveal">
+        <img class="graphic-frame graphic-frame--tall" src="assets/frame-tall.svg" alt="">
+        <img class="rsvp__seal" src="assets/wax-seal.webp" alt="" loading="lazy">
+        <p class="section-label" data-i18n="answerSmall">Ваш ответ</p>
+        <h2 class="script-heading" data-i18n="rsvp">Будете с нами?</h2>
+        <p class="rsvp__lead" data-i18n="rsvpLead">Пожалуйста, подтвердите присутствие — нам важно подготовить всё с заботой.</p>
+        <form id="rsvpForm">
+          <label><span data-i18n="yourName">Ваше имя</span><input name="name" required autocomplete="name" maxlength="80"></label>
+          <fieldset><legend data-i18n="attendance">Вы сможете прийти?</legend><label class="choice"><input type="radio" name="attending" value="yes" checked><span data-i18n="yes">С радостью приду</span></label><label class="choice"><input type="radio" name="attending" value="no"><span data-i18n="no">К сожалению, не смогу</span></label></fieldset>
+          <label><span data-i18n="count">Количество гостей</span><select name="guests_count"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
+          <label><span data-i18n="wish">Пожелание молодожёнам</span><textarea name="wish" rows="3" maxlength="500"></textarea></label>
+          <button class="paper-button paper-button--submit" type="submit"><span data-i18n="send">Отправить ответ</span></button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+        <button class="guest-button" id="openGuests" type="button"><span data-i18n="guestList">Пожелания гостей</span><b>↗</b></button>
+      </div>
+      <img class="botanical botanical--rsvp-right" src="assets/botanical-right.webp" alt="" loading="lazy">
+    </section>
+
+    <footer>
+      <img src="assets/ornament-divider.svg" alt="">
+      <p data-i18n="waiting">Будем рады видеть вас!</p>
+      <h2><span data-name="first">Бекзат</span> <i>&amp;</i> <span data-name="second">Алина</span></h2>
+      <small data-date="short">12 · 06 · 2027</small>
+    </footer>
+  </main>
+
+  <div class="guest-sheet" id="guestSheet" aria-hidden="true">
+    <button class="guest-sheet__backdrop" data-close-sheet aria-label="Закрыть"></button>
+    <section class="guest-sheet__panel" role="dialog" aria-modal="true" aria-labelledby="guestTitle">
+      <div class="guest-sheet__handle"></div>
+      <div class="guest-sheet__head"><div><p class="section-label" data-i18n="guestSmall">С любовью</p><h2 id="guestTitle" class="script-heading" data-i18n="guestList">Пожелания гостей</h2></div><button class="guest-sheet__close" data-close-sheet aria-label="Закрыть">×</button></div>
+      <div class="guest-list" id="guestList"></div>
+    </section>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

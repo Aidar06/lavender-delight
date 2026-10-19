@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="welcome" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M18 48h28M22 45l4-24h12l4 24M27 21c0-8 10-8 10 0M18 31h28M25 36h14"/><path d="M16 18c4-6 8-7 12-4M48 18c-4-6-8-7-12-4"/></symbol>
+  <symbol id="rings" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="25" cy="35" r="14"/><circle cx="39" cy="35" r="14"/><path d="m31 18 4-7h8l4 7-8 7Z"/></symbol>
+  <symbol id="dinner" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 46h40M18 42h28c0-12-6-20-14-20s-14 8-14 20ZM28 18h8M32 18v4"/><path d="M15 50h34"/></symbol>
+  <symbol id="music" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M27 18v27c0 6-12 7-12 1 0-5 7-7 12-5M27 22l23-6v23c0 6-12 7-12 1 0-5 7-7 12-5M27 29l23-6"/></symbol>
+  <symbol id="stars" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="m32 9 3 12 9-8-5 11 12-1-11 6 11 6-12-1 5 11-9-8-3 12-3-12-9 8 5-11-12 1 11-6-11-6 12 1-5-11 9 8Z"/><circle cx="32" cy="29" r="5"/></symbol>
+</svg>
