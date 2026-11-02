@@ -10,25 +10,16 @@
   <meta property="og:title" content="Свадебное приглашение">
   <meta property="og:description" content="Будем счастливы разделить этот день вместе">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/envelope-closed.webp" as="image">
   <link rel="preload" href="assets/paper-texture.webp" as="image">
   <link rel="preload" href="assets/botanical-left.webp" as="image">
   <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="intro-locked">
-  <div class="envelope-intro" id="envelopeIntro" aria-label="Открыть свадебное приглашение">
-    <img class="envelope-intro__poster" src="assets/envelope-closed.webp" alt="Свадебный конверт с лавандовой печатью">
-    <video class="envelope-intro__video" id="envelopeVideo" muted playsinline preload="auto" poster="assets/envelope-closed.webp" aria-hidden="true">
-      <source src="assets/envelope-opening.mp4" type="video/mp4">
-    </video>
-    <button class="envelope-intro__open" id="openEnvelope" type="button" aria-label="Открыть приглашение">
-      <span>Открыть приглашение</span><b>↑</b>
-    </button>
-  </div>
+<body>
   <div class="locale-switch" role="group" aria-label="Язык">
-    <button type="button" data-lang="ru" class="active">RU</button><i></i><button type="button" data-lang="ky">KG</button>
+    <button type="button" data-lang="ru" class="active">RU</button><i></i><button type="button" data-lang="ky">KG</button><i></i><button type="button" data-lang="kk">KZ</button>
   </div>
+  <button class="api-music-toggle" id="musicToggle" type="button" hidden aria-label="Музыка">♫</button><audio id="backgroundMusic" preload="none" loop></audio>
 
   <main>
     <section class="hero" id="welcome">
@@ -54,7 +45,7 @@
       <article class="letter__card reveal">
         <img class="graphic-frame graphic-frame--tall" src="assets/frame-tall.svg" alt="">
         <p class="section-label" data-i18n="dearSmall">Для самых близких</p>
-        <h2 class="script-heading" data-i18n="dear">Дорогие друзья и родные!</h2>
+        <h2 class="script-heading" data-content="welcomeTitle">Дорогие друзья и родные!</h2>
         <p class="letter__copy" data-content="welcome">Есть моменты, которые хочется разделить с самыми близкими. Будем счастливы видеть вас рядом в день рождения нашей семьи.</p>
         <img class="section-ornament" src="assets/ornament-divider.svg" alt="">
         <p class="letter__date" data-date="long">12 июня 2027</p>
@@ -105,6 +96,10 @@
       <img class="venue__sprig" src="assets/botanical-left.webp" alt="" loading="lazy">
     </section>
 
+    <section class="letter paper-section api-wish-block" id="wishBlock" hidden>
+      <article class="letter__card reveal"><img class="graphic-frame graphic-frame--tall" src="assets/frame-tall.svg" alt=""><p class="section-label">♡</p><h2 class="script-heading" id="wishBlockTitle"></h2><p class="letter__copy" id="wishBlockText"></p></article>
+    </section>
+
     <section class="rsvp paper-section" id="rsvp">
       <img class="botanical botanical--rsvp-left" src="assets/botanical-left.webp" alt="" loading="lazy">
       <div class="rsvp__card reveal">
@@ -116,11 +111,10 @@
           <label><span data-i18n="yourName">Ваше имя</span><input name="name" required autocomplete="name" maxlength="80"></label>
           <fieldset><legend data-i18n="attendance">Вы сможете прийти?</legend><label class="choice"><input type="radio" name="attending" value="yes" checked><span data-i18n="yes">С радостью приду</span></label><label class="choice"><input type="radio" name="attending" value="no"><span data-i18n="no">К сожалению, не смогу</span></label></fieldset>
           <label><span data-i18n="count">Количество гостей</span><select name="guests_count"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
-          <label><span data-i18n="wish">Пожелание молодожёнам</span><textarea name="wish" rows="3" maxlength="500"></textarea></label>
+          <label id="guestWishField"><span data-i18n="wish">Пожелание молодожёнам</span><textarea name="wish" rows="3" maxlength="500"></textarea></label>
           <button class="paper-button paper-button--submit" type="submit"><span data-i18n="send">Отправить ответ</span></button>
           <p class="form-status" id="formStatus" role="status"></p>
         </form>
-        <button class="guest-button" id="openGuests" type="button"><span data-i18n="guestList">Пожелания гостей</span><b>↗</b></button>
       </div>
       <img class="botanical botanical--rsvp-right" src="assets/botanical-right.webp" alt="" loading="lazy">
     </section>
@@ -132,15 +126,6 @@
       <small data-date="short">12 · 06 · 2027</small>
     </footer>
   </main>
-
-  <div class="guest-sheet" id="guestSheet" aria-hidden="true">
-    <button class="guest-sheet__backdrop" data-close-sheet aria-label="Закрыть"></button>
-    <section class="guest-sheet__panel" role="dialog" aria-modal="true" aria-labelledby="guestTitle">
-      <div class="guest-sheet__handle"></div>
-      <div class="guest-sheet__head"><div><p class="section-label" data-i18n="guestSmall">С любовью</p><h2 id="guestTitle" class="script-heading" data-i18n="guestList">Пожелания гостей</h2></div><button class="guest-sheet__close" data-close-sheet aria-label="Закрыть">×</button></div>
-      <div class="guest-list" id="guestList"></div>
-    </section>
-  </div>
 
   <script type="module" src="app.js"></script>
 </body>

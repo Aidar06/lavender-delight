@@ -158,3 +158,4 @@ footer h2{margin:0;font:400 clamp(52px,8vw,88px)/1 var(--script)}footer h2 i{fon
 }
 @media(max-aspect-ratio:3/4){.envelope-intro__poster,.envelope-intro__video{object-fit:cover}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.scroll-cue b,.calendar .wedding-day::before,.envelope-intro__open b{animation:none}.botanical{will-change:auto}.guest-sheet__panel,.guest-sheet__backdrop,.envelope-intro{transition-duration:.01ms}}
+.api-music-toggle{position:fixed;z-index:91;top:18px;left:18px;width:42px;height:42px;border:1px solid #9f8b7255;border-radius:50%;background:#fffaf0dd;color:#776080;font-size:18px;backdrop-filter:blur(10px)}.api-music-toggle.is-playing{color:#b28a4b}.api-wish-block{padding-block:90px}.hero__card{animation:apiHeroIn 1.15s cubic-bezier(.2,.75,.2,1) both}@keyframes apiHeroIn{from{opacity:0;transform:translateY(24px) scale(.985)}to{opacity:1;transform:none}}
